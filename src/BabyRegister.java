@@ -20,8 +20,14 @@ public class BabyRegister {
 		
 		do {
 			System.out.println("\nEnter\n'1' to add babies\n'2' to list babies by age\n'3' to list babies by name\n'4' to add gifts\n'5' to list gifts\n'0' to exit");
+			userInput = scan.nextInt();
 			
-			switch(userInput = scan.nextInt()){
+			while(userInput != 1 && userInput != 2 && userInput != 3 && userInput != 4 && userInput != 5 && userInput != 0) {
+				System.out.println("Invalid input! Please try again. ");
+				userInput = scan.nextInt();
+			}
+			
+			switch(userInput) {
 				case 1:
 					addBabies();
 					break;				
@@ -57,14 +63,14 @@ public class BabyRegister {
 				birthday = myFormat.parse(date + " " + time);
 				invalid = false;
 			} catch(ParseException e){
-				System.out.println("You entered an invalid date, please try again: ");
+				System.out.println("You entered an invalid date, please try again. ");
 			}		
 		} while(invalid);
 		
 		System.out.println("What is the baby's gender (f/m)? ");
 		char gender = scan.next().charAt(0);
 		while(gender != 'f' && gender != 'm') {
-			System.out.println("You entered an invalid gender, please try again: ");
+			System.out.println("You entered an invalid gender, please try again. ");
 			gender = scan.next().charAt(0);
 		}
 
@@ -126,7 +132,7 @@ public class BabyRegister {
 			}
 		}
 		for(Baby baby: babies){
-			System.out.println(baby.howOld());
+			System.out.println(baby.getName()+" "+baby.howOld()+" days old");
 		}
 	}
 	

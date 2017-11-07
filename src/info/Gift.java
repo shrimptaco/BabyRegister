@@ -44,11 +44,7 @@ public class Gift{
 		this.giftName = giftName;
 	}
 
-	@Override
-	public String toString() {
-		return "Donor name: "+getDonorName()+" Gift:"+getGiftName()+" Date:"+getDonationDate();
+	public String toString(){
+		return "Donor name: "+getDonorName()+"  Gift: "+getGiftName()+"  Date: "+getDonationDate();
 	}
-	
-	
-	
 }

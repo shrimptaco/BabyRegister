@@ -29,7 +29,6 @@ public class Baby{
 		this.gender = gender;
 	}
 
-
 	public Date getBirthday(){
 		return birthday;
 	}
@@ -49,12 +48,10 @@ public class Baby{
 		this.gender = gender;
 	}
 	
-
 	// If a given kid is older than the current one
 	public boolean isOlder(Baby baby){
 		return getBirthday().after(baby.getBirthday());
 	}
-
 	// The actual age of the kid in days
 	public int howOld(){
 		long difference = System.currentTimeMillis() - birthday.getTime();
